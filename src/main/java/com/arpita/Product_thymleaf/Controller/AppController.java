@@ -48,5 +48,11 @@ public class AppController {
 		mav.addObject("product",p);
 		return mav;
 	}
+	@RequestMapping("/delete/{id}")
+	public String deleteProduct(@PathVariable(name ="id") Long id) {
 	
+		services.delete(id);
+		
+		return "redirect:/";
+	}
 }
